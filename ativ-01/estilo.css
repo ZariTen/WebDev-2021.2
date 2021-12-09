@@ -29,14 +29,14 @@
 
 .button-rect {
   text-align: center;
-  height: 75px;
+  height: 95px;
   cursor: pointer;
   background-color: white;
 }
 
 .button-ac {
   text-align: center;
-  width: 120px;
+  width: 110px;
   height: 40px;
   grid-column-end: 4;
   cursor: pointer;
