@@ -42,3 +42,7 @@
   cursor: pointer;
   background-color: white;
 }
+
+html {
+  font-size: 250%;
+}
