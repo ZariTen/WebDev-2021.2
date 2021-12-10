@@ -58,6 +58,13 @@ document.querySelectorAll(".button-rect").forEach((botao) => {
   });
 });
 
+document.getElementById("button-ac").addEventListener("click", () => {
+  firstNumber = null;
+  secondNumber = null;
+  operation = "";
+  painel.innerHTML = 0;
+});
+
 function equal() {
   firstNumber = parseFloat(firstNumber);
   secondNumber = parseFloat(secondNumber);
@@ -70,5 +77,7 @@ function equal() {
       return firstNumber * secondNumber;
     case "/":
       return firstNumber / secondNumber;
+    default:
+      return "ERROR";
   }
 }
