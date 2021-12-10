@@ -51,7 +51,7 @@ document.querySelectorAll(".button-rect").forEach((botao) => {
       if (secondNumber == null) {
         secondNumber = painel.innerHTML;
       }
-      painel.innerHTML = equal();
+      painel.innerHTML = equal().toPrecision(6);
       firstNumber = painel.innerHTML;
       console.log(firstNumber, secondNumber, operation);
     }
@@ -66,6 +66,8 @@ document.getElementById("button-ac").addEventListener("click", () => {
 });
 
 function equal() {
+  firstNumber = firstNumber.replace(",", ".");
+  secondNumber = secondNumber.replace(",", ".");
   firstNumber = parseFloat(firstNumber);
   secondNumber = parseFloat(secondNumber);
   switch (operation) {
