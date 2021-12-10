@@ -19,7 +19,11 @@ document.querySelectorAll(".button").forEach((botao) => {
       }
       painel.innerHTML = botao.textContent;
     } else {
-      if (painel.innerHTML.includes(",") && botao.textContent == ",") {
+      if (painel.innerHTML.includes(".") && botao.textContent == ",") {
+        return;
+      }
+      if (botao.textContent == ",") {
+        painel.innerHTML += ".";
         return;
       }
       painel.innerHTML += botao.textContent;
@@ -53,7 +57,6 @@ document.querySelectorAll(".button-rect").forEach((botao) => {
       }
       painel.innerHTML = equal().toPrecision(6);
       firstNumber = painel.innerHTML;
-      console.log(firstNumber, secondNumber, operation);
     }
   });
 });
@@ -66,8 +69,6 @@ document.getElementById("button-ac").addEventListener("click", () => {
 });
 
 function equal() {
-  firstNumber = firstNumber.replace(",", ".");
-  secondNumber = secondNumber.replace(",", ".");
   firstNumber = parseFloat(firstNumber);
   secondNumber = parseFloat(secondNumber);
   switch (operation) {
