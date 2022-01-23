@@ -33,12 +33,14 @@ function xhttpAssincrono(callBackFunction, type, value) {
 }
 
 var selectUsusarios = document.getElementById("usuarios");
+var listaUsuarios = [];
 
 //Adiciona um nome no select
 function addToSelect(name) {
   var option = document.createElement("option");
   option.text = name;
   selectUsusarios.add(option);
+  listaUsuarios.push(name);
 }
 
 //Adquire nome do usuário a partir do JSON
@@ -60,9 +62,12 @@ var radioTodos = document.getElementById("todosradio");
 var optionsDiv = document.getElementById("todosOptionsDiv");
 
 radioTodos.onchange = () => {
+  document.getElementById("titleSelected").innerHTML = "Tarefas do usuário";
   optionsDiv.style.display = "inline";
 };
 
 radioPost.onchange = () => {
   optionsDiv.style.display = "none";
+  document.getElementById("titleSelected").innerHTML = "Posts do usuário";
+  xhttpAssincrono(console.log, 2, 1);
 };
