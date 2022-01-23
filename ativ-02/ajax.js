@@ -53,21 +53,66 @@ function getUserFromJson(json) {
 
 xhttpAssincrono(getUserFromJson, 1, 0);
 
-selectUsusarios.onchange = (chng) => {
-  console.log(chng.srcElement.value);
-};
-
 var radioPost = document.getElementById("postsradio");
 var radioTodos = document.getElementById("todosradio");
 var optionsDiv = document.getElementById("todosOptionsDiv");
+var listaPost = document.getElementById("tarefasPosts");
 
-radioTodos.onchange = () => {
+selectUsusarios.onchange = () => {
+  if (radioPost.checked) {
+    generatePosts();
+  } else if (radioTodos.checked) {
+    generatePosts();
+  }
+};
+
+radioTodos.onchange = generateTodos;
+
+function generateTodos() {
   document.getElementById("titleSelected").innerHTML = "Tarefas do usuário";
   optionsDiv.style.display = "inline";
-};
+  listaPost.innerHTML = "";
+  if (selectUsusarios.value != "Selecione um usuário") {
+    var index = listaUsuarios.findIndex(
+      (name) => name == selectUsusarios.value
+    );
+    xhttpAssincrono(adicionarTarefas, 3, index + 1);
+  }
+}
 
-radioPost.onchange = () => {
+radioPost.onchange = generatePosts;
+
+function generatePosts() {
   optionsDiv.style.display = "none";
   document.getElementById("titleSelected").innerHTML = "Posts do usuário";
-  xhttpAssincrono(console.log, 2, 1);
-};
+  if (selectUsusarios.value != "Selecione um usuário") {
+    var index = listaUsuarios.findIndex(
+      (name) => name == selectUsusarios.value
+    );
+    xhttpAssincrono(adicionarPost, 2, index + 1);
+  }
+}
+
+function adicionarPost(json) {
+  var parsed = JSON.parse(json);
+  listaPost.innerHTML = "";
+  for (k in parsed) {
+    var posts = document.createElement("li");
+    posts.appendChild(document.createTextNode(parsed[k].title));
+    listaPost.appendChild(posts);
+  }
+}
+
+function adicionarTarefas(json) {
+  var parsed = JSON.parse(json);
+  listaPost.innerHTML = "";
+  for (k in parsed) {
+    var posts = document.createElement("li");
+    posts.appendChild(
+      document.createTextNode(
+        "Concluída: " + parsed[k].completed + " - " + parsed[k].title
+      )
+    );
+    listaPost.appendChild(posts);
+  }
+}
