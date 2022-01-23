@@ -49,4 +49,8 @@ function getUserFromJson(json) {
   }
 }
 
-console.log(xhttpAssincrono(getUserFromJson, 1, 0));
+xhttpAssincrono(getUserFromJson, 1, 0);
+
+selectUsusarios.onchange = (chng) => {
+  console.log(chng.srcElement.value);
+};
