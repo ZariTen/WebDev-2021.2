@@ -5,23 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ajax</title>
+    <link rel="stylesheet" href="estilo.css" />
   </head>
   <body>
-    <select id="usuarios">
-      <option selected disabled>Selecione um usuário</option>
-    </select>
-    <div>
-      <input type="radio" name="userradio" id="postsradio" /> User Posts
-      <input type="radio" name="userradio" id="todosradio" /> User TODOs
-    </div>
-    <div id="todosOptionsDiv" style="display: none">
-      <input type="radio" name="todos" id="alltaskradio" /> Todas as tarefas
-      <input type="radio" name="todos" id="finishedradio" /> Tarefas Finalizadas
-      <input type="radio" name="todos" id="notfinishedradio" /> Tarefas Não
-      Finalizadas
-    </div>
+    <div id="tudo">
+      <select id="usuarios">
+        <option selected disabled>Selecione um usuário</option>
+      </select>
+      <div>
+        <input type="radio" name="userradio" id="postsradio" /> User Posts
+        <input type="radio" name="userradio" id="todosradio" /> User TODOs
+      </div>
+      <div id="todosOptionsDiv" style="display: none">
+        <input type="radio" name="todos" id="alltaskradio" /> Todas as tarefas
+        <input type="radio" name="todos" id="finishedradio" /> Tarefas
+        Finalizadas
+        <input type="radio" name="todos" id="notfinishedradio" /> Tarefas Não
+        Finalizadas
+      </div>
 
-    <h1 id="titleSelected">Escolha um usuário e opção</h1>
+      <h1 id="titleSelected">Escolha um usuário e opção</h1>
+    </div>
     <ul id="tarefasPosts"></ul>
     <script src="ajax.js"></script>
   </body>
