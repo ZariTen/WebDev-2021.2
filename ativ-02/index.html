@@ -11,8 +11,14 @@
       <option selected disabled>Selecione um usuário</option>
     </select>
     <div>
-      <input type="radio" name="userradio" id="posts" /> User Posts
-      <input type="radio" name="userradio" id="todos" /> User TODOs
+      <input type="radio" name="userradio" id="postsradio" /> User Posts
+      <input type="radio" name="userradio" id="todosradio" /> User TODOs
+    </div>
+    <div id="todosOptionsDiv" style="display: none">
+      <input type="radio" name="todos" id="alltaskradio" /> Todas as tarefas
+      <input type="radio" name="todos" id="finishedradio" /> Tarefas Finalizadas
+      <input type="radio" name="todos" id="notfinishedradio" /> Tarefas Não
+      Finalizadas
     </div>
     <script src="ajax.js"></script>
   </body>

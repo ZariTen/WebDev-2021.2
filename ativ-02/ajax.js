@@ -54,3 +54,15 @@ xhttpAssincrono(getUserFromJson, 1, 0);
 selectUsusarios.onchange = (chng) => {
   console.log(chng.srcElement.value);
 };
+
+var radioPost = document.getElementById("postsradio");
+var radioTodos = document.getElementById("todosradio");
+var optionsDiv = document.getElementById("todosOptionsDiv");
+
+radioTodos.onchange = () => {
+  optionsDiv.style.display = "inline";
+};
+
+radioPost.onchange = () => {
+  optionsDiv.style.display = "none";
+};
