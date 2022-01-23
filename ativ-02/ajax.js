@@ -62,7 +62,7 @@ selectUsusarios.onchange = () => {
   if (radioPost.checked) {
     generatePosts();
   } else if (radioTodos.checked) {
-    generatePosts();
+    generateTodos();
   }
 };
 
@@ -103,16 +103,21 @@ function adicionarPost(json) {
   }
 }
 
+var alltaskradio = document.getElementById("alltaskradio");
+var finishedradio = document.getElementById("finishedradio");
+var notfinishedradio = document.getElementById("notfinishedradio");
 function adicionarTarefas(json) {
   var parsed = JSON.parse(json);
   listaPost.innerHTML = "";
   for (k in parsed) {
     var posts = document.createElement("li");
-    posts.appendChild(
-      document.createTextNode(
-        "Concluída: " + parsed[k].completed + " - " + parsed[k].title
-      )
-    );
+    if (alltaskradio.checked) {
+      posts.appendChild(
+        document.createTextNode(
+          "Concluída: " + parsed[k].completed + " - " + parsed[k].title
+        )
+      );
+    }
     listaPost.appendChild(posts);
   }
 }
