@@ -58,6 +58,7 @@ var radioTodos = document.getElementById("todosradio");
 var optionsDiv = document.getElementById("todosOptionsDiv");
 var listaPost = document.getElementById("tarefasPosts");
 
+//Se mudar usuário, regerar listas
 selectUsusarios.onchange = () => {
   if (radioPost.checked) {
     generatePosts();
@@ -106,18 +107,45 @@ function adicionarPost(json) {
 var alltaskradio = document.getElementById("alltaskradio");
 var finishedradio = document.getElementById("finishedradio");
 var notfinishedradio = document.getElementById("notfinishedradio");
+
+alltaskradio.onchange =
+  finishedradio.onchange =
+  notfinishedradio.onchange =
+    generateTodos;
+
 function adicionarTarefas(json) {
   var parsed = JSON.parse(json);
   listaPost.innerHTML = "";
   for (k in parsed) {
     var posts = document.createElement("li");
     if (alltaskradio.checked) {
+      //Mostrar todas tarefas
       posts.appendChild(
         document.createTextNode(
           "Concluída: " + parsed[k].completed + " - " + parsed[k].title
         )
       );
+      listaPost.appendChild(posts);
+    } else if (finishedradio.checked) {
+      //Mostrar apenas tarefas completas
+      if (parsed[k].completed) {
+        posts.appendChild(
+          document.createTextNode(
+            "Concluída: " + parsed[k].completed + " - " + parsed[k].title
+          )
+        );
+        listaPost.appendChild(posts);
+      }
+    } else if (notfinishedradio.checked) {
+      //Mostrar tarefas incompletas
+      if (!parsed[k].completed) {
+        posts.appendChild(
+          document.createTextNode(
+            "Concluída: " + parsed[k].completed + " - " + parsed[k].title
+          )
+        );
+        listaPost.appendChild(posts);
+      }
     }
-    listaPost.appendChild(posts);
   }
 }
