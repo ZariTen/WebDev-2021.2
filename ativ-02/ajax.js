@@ -31,3 +31,22 @@ function xhttpAssincrono(callBackFunction, type, value) {
   xhttp.open("GET", url, true);
   xhttp.send();
 }
+
+var selectUsusarios = document.getElementById("usuarios");
+
+//Adiciona um nome no select
+function addToSelect(name) {
+  var option = document.createElement("option");
+  option.text = name;
+  selectUsusarios.add(option);
+}
+
+//Adquire dados do usuário a partir do JSON
+function getUserFromJson(json) {
+  var parsed = JSON.parse(json);
+  for (var k in parsed) {
+    addToSelect(parsed[k].name);
+  }
+}
+
+console.log(xhttpAssincrono(getUserFromJson, 1, 0));
