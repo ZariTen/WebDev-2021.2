@@ -41,7 +41,7 @@ function addToSelect(name) {
   selectUsusarios.add(option);
 }
 
-//Adquire dados do usuário a partir do JSON
+//Adquire nome do usuário a partir do JSON
 function getUserFromJson(json) {
   var parsed = JSON.parse(json);
   for (var k in parsed) {
