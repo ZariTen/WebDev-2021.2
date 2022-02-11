@@ -1,0 +1,18 @@
+#letramusicaDiv {
+        font-size: larger;
+        font-weight: bold;
+        text-align: center;
+}
+
+#submitBtn {
+        margin-top: 10px;
+}
+
+#artistaInput{
+        margin-bottom: 10px;
+
+}
+
+form{
+        text-align: center;
+}
