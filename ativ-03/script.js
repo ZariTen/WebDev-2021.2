@@ -1,6 +1,5 @@
-let parametros = new URLSearchParams(location.search);
-const artista = parametros.get("artista");
-const musica = parametros.get("musica");
+var artista = "";
+var musica = "";
 
 function xhttpAssincrono(callBackFunction) {
   var xhttp = new XMLHttpRequest();
@@ -17,9 +16,18 @@ function xhttpAssincrono(callBackFunction) {
   xhttp.send();
 }
 
-xhttpAssincrono(adicionarLetraDiv);
 var musicaDiv = document.getElementById("letramusicaDiv");
 function adicionarLetraDiv(letra) {
   letraJson = JSON.parse(letra);
   musicaDiv.innerHTML = "<pre>" + letraJson.lyrics + "</pre>";
+}
+
+const artistaInput = document.getElementById("artistaInput");
+const musicaInput = document.getElementById("musicaInput");
+
+function pesquisarLetra(){
+ artista = artistaInput.value;
+ musica = musicaInput.value;
+ xhttpAssincrono(adicionarLetraDiv);
+
 }

@@ -10,8 +10,9 @@
         cursor: pointer;
 }
 
-form {
+#questions{
         font-size: larger;
+        text-align: center;
 
 }
 
@@ -23,8 +24,4 @@ input {
 #artistaInput{
         margin-bottom: 10px;
 
-}
-
-form{
-        text-align: center;
 }

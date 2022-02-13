@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form>
+    <div id="questions">
       <label for="artista">Nome do artista:</label><br />
       <input type="text" id="artistaInput" name="artista" /><br />
       <label for="musica">Nome da música:</label><br />
       <input type="text" id="musicaInput" name="musica" /><br />
-      <input type="submit" id="submitBtn" value="Pesquisar" />
-    </form>
+      <input type="submit" id="submitBtn" value="Pesquisar" onclick="pesquisarLetra()" />
+    </div>
     <div id="letramusicaDiv"></div>
     <script src="script.js"></script>
   </body>
