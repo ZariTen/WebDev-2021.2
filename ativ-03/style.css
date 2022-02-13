@@ -6,6 +6,18 @@
 
 #submitBtn {
         margin-top: 10px;
+        padding: 10px;
+        cursor: pointer;
+}
+
+form {
+        font-size: larger;
+
+}
+
+input {
+        padding: 4px;
+
 }
 
 #artistaInput{
