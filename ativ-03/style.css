@@ -21,6 +21,20 @@ input {
 
 }
 
+h1,h2{
+        text-align: center;
+
+}
+
+#pesquisasCache {
+        text-align: center;
+}
+
+#musicasCache{
+        list-style-type: none;
+
+}
+
 #artistaInput{
         margin-bottom: 10px;
 
