@@ -31,6 +31,7 @@ body{
 #pesquisasCache {
         display: inline-block;
         padding: 5px;
+        margin-top: 10px;
         font-size: larger;
         font-weight: bold;
         background-color: rgb(153, 255, 153);
