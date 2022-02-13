@@ -1,7 +1,9 @@
 #letramusicaDiv {
-        font-size: larger;
         font-weight: bold;
-        text-align: center;
+        background-color: grey;
+        display: inline-block;
+        border-radius: 5px;
+        margin-top: 5px;
 }
 
 #submitBtn {
@@ -12,22 +14,27 @@
 
 #questions{
         font-size: larger;
-        text-align: center;
-
 }
 
 input {
         padding: 4px;
+        border-radius: 20px;
 
 }
 
-h1,h2{
+body{
+        background-color: rgb(204, 255, 102);
         text-align: center;
 
 }
 
 #pesquisasCache {
-        text-align: center;
+        display: inline-block;
+        padding: 5px;
+        font-size: larger;
+        font-weight: bold;
+        background-color: rgb(153, 255, 153);
+        border-radius: 10px;
 }
 
 #musicasCache{
