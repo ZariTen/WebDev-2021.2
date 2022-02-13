@@ -32,6 +32,7 @@ h1,h2{
 
 #musicasCache{
         list-style-type: none;
+        text-transform: capitalize;
 
 }
 
