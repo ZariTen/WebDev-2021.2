@@ -1,6 +1,6 @@
 # WebDev-2021.2
 
-Repositório para a matéria de desenvolvimento web I, UFRN.
+Repositório para a matéria de Desenvolvimento Web I, UFRN.
 
 ## Atividade 01
 
